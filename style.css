@@ -1,42 +1,109 @@
 body {
   margin: 0;
-  font-family: Georgia, serif;
-  background: #f5f1e8;
-  color: #243324;
+  font-family: "Georgia", serif;
+  background: #ece7dd;
+  color: #1f2a1f;
 }
 
-.container {
-  padding: 24px;
+.dashboard {
+  display: flex;
+  min-height: 100vh;
 }
 
-h1 {
-  letter-spacing: 2px;
-  margin-bottom: 4px;
-}
+/* SIDEBAR */
 
-p {
-  color: #6b6b58;
-  font-style: italic;
-}
-
-.modes {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  margin-top: 25px;
-}
-
-.mode-btn {
-  padding: 22px;
-  border: none;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #344734, #6f7b58);
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #2f3d2f, #4f5c46);
   color: white;
-  font-size: 18px;
-  text-align: left;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.mode-btn:active {
-  transform: scale(0.98);
+.logo {
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+.menu-item {
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.08);
+  font-size: 18px;
+}
+
+/* MAIN CONTENT */
+
+.main {
+  flex: 1;
+  padding: 35px;
+}
+
+.main h1 {
+  font-size: 42px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #7d786e;
+  font-style: italic;
+  margin-bottom: 35px;
+}
+
+/* MODE GRID */
+
+.mode-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 22px;
+}
+
+/* MODE CARDS */
+
+.mode-card {
+  position: relative;
+  height: 190px;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  transition: transform 0.3s ease;
+}
+
+.mode-card:hover {
+  transform: translateY(-4px);
+}
+
+.mode-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.1)
+  );
+}
+
+.mode-text {
+  position: relative;
+  z-index: 2;
+}
+
+.mode-title {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.mode-sub {
+  font-size: 15px;
+  opacity: 0.9;
 }
