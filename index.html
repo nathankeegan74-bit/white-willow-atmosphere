@@ -1,91 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>White Willow Atmosphere</title>
-
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">WW</div>
+        <div>
+          <h2>WHITE<br>WILLOW</h2>
+          <p>Single Room Clinic</p>
+        </div>
+      </div>
 
-<div class="dashboard">
+      <nav>
+        <button class="active">Atmospheres</button>
+        <button>Sessions</button>
+        <button>Lighting</button>
+        <button>Music</button>
+        <button>Aromas</button>
+        <button>Settings</button>
+      </nav>
 
-  <!-- SIDEBAR -->
+      <div class="room-state">
+        <span>Room State</span>
+        <strong>Calm & Ready</strong>
+        <p>Demo controls active</p>
+      </div>
+    </aside>
 
-  <div class="sidebar">
+    <main class="main">
+      <header class="top">
+        <div>
+          <span class="eyebrow">White Willow Atmosphere System</span>
+          <h1>Atmosphere Dashboard</h1>
+          <p>Create the right environment for healing</p>
+        </div>
 
-    <div class="logo">
-      WHITE<br>WILLOW
-    </div>
+        <div class="clock">
+          <strong id="currentTime">--:--</strong>
+          <span id="currentDate">Loading date</span>
+        </div>
+      </header>
 
-    <div class="menu-item">Consultation</div>
-    <div class="menu-item">Treatment</div>
-    <div class="menu-item">Deep Treatment</div>
-    <div class="menu-item">Meditation</div>
+      <section class="active-panel">
+        <div>
+          <span class="eyebrow">Active Atmosphere</span>
+          <h2 id="activeModeTitle">Consultation</h2>
+          <p id="activeModeDescription">Warm, calm and open for listening, observation and patient trust.</p>
+          <div class="tags" id="activeTags">
+            <span>Earth support</span>
+            <span>Metal clarity</span>
+            <span>Gentle Fire connection</span>
+          </div>
+        </div>
+        <div class="orb"></div>
+      </section>
 
+      <section class="section-title">
+        <div>
+          <h3>Atmosphere Modes</h3>
+          <p>Swipe or scroll sideways. All 12 modes stay available without crowding the dashboard.</p>
+        </div>
+        <span>12 modes</span>
+      </section>
+
+      <section class="mode-carousel">
+        <button class="mode-card active" data-mode="Consultation" data-description="Warm, calm and open for listening, observation and patient trust." data-tags="Earth support,Metal clarity,Gentle Fire connection">
+          <i class="dot consultation"></i><strong>Consultation</strong><em>Warm • Calm • Open</em><small>Conversation, intake and Five Element observation.</small>
+        </button>
+
+        <button class="mode-card" data-mode="Treatment" data-description="Balanced standard treatment atmosphere for regular acupuncture sessions." data-tags="Neutral balance,Soft focus,Clinical calm">
+          <i class="dot treatment"></i><strong>Treatment</strong><em>Balanced • Soft • Steady</em><small>Default therapeutic setting for most treatments.</small>
+        </button>
+
+        <button class="mode-card" data-mode="Wood Flow" data-description="Supports movement, release, flexibility and easing stuck tension." data-tags="Wood,Movement,Flow">
+          <i class="dot wood"></i><strong>Wood Flow</strong><em>Movement • Release • Flow</em><small>For stagnation, frustration, tension and planning overload.</small>
+        </button>
+
+        <button class="mode-card" data-mode="Fire Connection" data-description="Creates warmth, connection and gentle emotional brightness." data-tags="Fire,Connection,Shen warmth">
+          <i class="dot fire"></i><strong>Fire Connection</strong><em>Warmth • Joy • Contact</em><small>For emotional distance, anxiety and lack of warmth.</small>
+        </button>
+
+        <button class="mode-card" data-mode="Earth Centering" data-description="A supportive centred atmosphere for worry, overthinking and depletion." data-tags="Earth,Nourishment,Grounding">
+          <i class="dot earth"></i><strong>Earth Centering</strong><em>Held • Nourished • Grounded</em><small>For worry, digestion themes and over-caring patterns.</small>
+        </button>
+
+        <button class="mode-card" data-mode="Metal Release" data-description="Clean, spacious atmosphere for grief, letting go and refined stillness." data-tags="Metal,Release,Spaciousness">
+          <i class="dot metal"></i><strong>Metal Release</strong><em>Clear • Spacious • Letting Go</em><small>For grief, rigidity, breath and emotional holding.</small>
+        </button>
+
+        <button class="mode-card" data-mode="Water Restoration" data-description="Deep quiet restorative environment for exhaustion, fear and recovery." data-tags="Water,Depth,Restoration">
+          <i class="dot water"></i><strong>Water Restoration</strong><em>Deep • Quiet • Restorative</em><small>For burnout, depletion, fatigue and deep recovery.</small>
+        </button>
+
+        <button class="mode-card" data-mode="Deep Treatment" data-description="A darker, slower, more inward setting for intensive treatment work." data-tags="Deep stillness,Integration,Low stimulus">
+          <i class="dot deep"></i><strong>Deep Treatment</strong><em>Still • Inward • Profound</em><small>For complex sessions needing deeper quiet.</small>
+        </button>
+
+        <button class="mode-card" data-mode="Meditation" data-description="Minimal spacious stillness for breath, silence and Shen settling." data-tags="Stillness,Breath,Minimal sound">
+          <i class="dot meditation"></i><strong>Meditation</strong><em>Silent • Spacious • Present</em><small>For breathwork, mindfulness and quiet treatment.</small>
+        </button>
+
+        <button class="mode-card" data-mode="Woodland Calm" data-description="Nature-based calming atmosphere with soft forest and organic grounding." data-tags="Woodland,Nature,Restorative calm">
+          <i class="dot woodland"></i><strong>Woodland Calm</strong><em>Forest • Breath • Nature</em><small>For stress, overwork and urban overstimulation.</small>
+        </button>
+
+        <button class="mode-card" data-mode="Energy Lift" data-description="Gentle uplifting atmosphere for low mood and tiredness without overstimulation." data-tags="Lift,Light,Freshness">
+          <i class="dot lift"></i><strong>Energy Lift</strong><em>Fresh • Light • Uplifting</em><small>For low motivation, heaviness and mild low mood.</small>
+        </button>
+
+        <button class="mode-card signature" data-mode="White Willow Signature" data-description="The premium house atmosphere: memorable, balanced and uniquely White Willow." data-tags="Signature blend,Clinic identity,Premium calm">
+          <i class="dot signature-dot"></i><strong>White Willow Signature</strong><em>Premium • Memorable • Held</em><small>The emotional identity patients remember.</small>
+        </button>
+      </section>
+
+      <section class="footer-status">
+        <div>
+          <span>Now Running</span>
+          <strong id="statusMode">Consultation</strong>
+          <p id="statusDetail">Soft Ambient Piano • Warm ivory light • Subtle bergamot blend</p>
+        </div>
+        <div class="connections">
+          <span>Hue: demo</span>
+          <span>Spotify: demo</span>
+          <span>Moodo: demo</span>
+        </div>
+      </section>
+    </main>
+
+    <aside class="controls">
+      <section class="panel">
+        <span class="eyebrow">Active Session</span>
+        <h2 id="panelMode">Consultation Active</h2>
+        <div class="timer" id="sessionTimer">00:00:00</div>
+        <div class="session-actions">
+          <button id="pauseBtn">Pause Session</button>
+          <button id="endBtn">End Session</button>
+        </div>
+        <div class="extend">
+          <button>+5 mins</button>
+          <button>+10 mins</button>
+          <button>+15 mins</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="control">
+          <div><strong>Lighting</strong><span>Warm ivory • 72%</span></div>
+          <input type="range" min="0" max="100" value="72" />
+        </div>
+
+        <div class="control">
+          <div><strong>Music</strong><span>Soft Ambient Piano • 24%</span></div>
+          <input type="range" min="0" max="100" value="24" />
+        </div>
+
+        <div class="control">
+          <div><strong>Aroma</strong><span>Bergamot • Cedarwood • 20%</span></div>
+          <input type="range" min="0" max="100" value="20" />
+        </div>
+      </section>
+
+      <section class="panel">
+        <span class="eyebrow">Quick Overrides</span>
+        <div class="quick-grid">
+          <button>Silent Mode</button>
+          <button>Reset Room</button>
+          <button>Lighting Only</button>
+          <button>Aroma Off</button>
+          <button>Music Off</button>
+          <button>Cleaning Mode</button>
+        </div>
+      </section>
+    </aside>
   </div>
 
-  <!-- MAIN -->
-
-  <div class="main">
-
-    <h1>Atmosphere Dashboard</h1>
-    <div class="subtitle">
-      Create the right environment for healing
-    </div>
-
-    <div class="mode-grid">
-
-      <!-- CARD -->
-
-      <div class="mode-card" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');">
-        <div class="mode-overlay"></div>
-        <div class="mode-text">
-          <div class="mode-title">Consultation</div>
-          <div class="mode-sub">Warm • Calm • Open</div>
-        </div>
-      </div>
-
-      <!-- CARD -->
-
-      <div class="mode-card" style="background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9');">
-        <div class="mode-overlay"></div>
-        <div class="mode-text">
-          <div class="mode-title">Wood Flow</div>
-          <div class="mode-sub">Movement • Release • Flow</div>
-        </div>
-      </div>
-
-      <!-- CARD -->
-
-      <div class="mode-card" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');">
-        <div class="mode-overlay"></div>
-        <div class="mode-text">
-          <div class="mode-title">Water Restoration</div>
-          <div class="mode-sub">Deep • Quiet • Restorative</div>
-        </div>
-      </div>
-
-      <!-- CARD -->
-
-      <div class="mode-card" style="background-image:url('https://images.unsplash.com/photo-1493246507139-91e8fad9978e');">
-        <div class="mode-overlay"></div>
-        <div class="mode-text">
-          <div class="mode-title">Woodland Calm</div>
-          <div class="mode-sub">Forest • Breath • Nature</div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
